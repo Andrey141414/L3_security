@@ -14,7 +14,7 @@ class inputTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function test_input_from_keyword(): void
     {
         //readline должна возвращать пустую строку
         $input = (new dialog())->InputFromKeyword('');

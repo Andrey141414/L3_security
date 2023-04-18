@@ -45,5 +45,11 @@ class dialog extends Command
 
         return $response;
     }
+
+    public function InputFromKeyword($prewiew)
+    {
+        $text  = readline($prewiew);
+        return $text;
+    }
     
 }
