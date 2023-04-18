@@ -51,5 +51,19 @@ class dialog extends Command
         $text  = readline($prewiew);
         return $text;
     }
+
+    public function Beta($arr)
+    {
+        foreach($arr as $message)
+        {
+            if($message == 'end')
+            {
+                return true;
+            }
+            $this->SendMessage($message);
+
+        }
+        return false;
+    }
     
 }
