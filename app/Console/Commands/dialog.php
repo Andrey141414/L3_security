@@ -26,6 +26,18 @@ class dialog extends Command
     public function handle()
     {
         //
+        for(;;)
+        {
+            $text = $this->InputFromKeyword('Введите текст:');
+            echo("\n");
+            if($text  == 'end')
+            {
+               break;
+            }
+            $response = $this->SendMessage($text);
+            print_r('Собеседник: '. $response['message']."\n\n");
+        }
+        return true;
     }
 
     public function SendMessage($text)
@@ -41,7 +53,7 @@ class dialog extends Command
             "input_text" => $text."only text",
         ]))->post('https://api.writesonic.com/v2/business/content/chatsonic?engine=premium');
 
-        print_r($response['message']);
+        
 
         return $response;
     }
